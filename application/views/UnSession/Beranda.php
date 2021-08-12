@@ -145,11 +145,11 @@
 
 
       <!-- About Us -->
-      <?php if (!empty($about_us)) : $i = 0; foreach ($about_us as $about) : if ((int) $about->about_status === 1) : ?>
       <div class="container">
         <section class="section-about" id="tentang_kami">
           <h2 class="text-center">Tentang Kami</h2>
           <hr />
+          <?php if (!empty($about_us)) : $i = 0; foreach ($about_us as $about) : if ((int) $about->about_status === 1) : ?>
           <div class="row">
             <div class="col-md-5 col-6">
               <img src="<?= base_url('upload/konten_about/'.$about->about_img); ?>" alt="" />
@@ -158,12 +158,11 @@
               <p>
                 <?= $about->about_desc; ?>
               </p>
-              <button class="btn btn-about">Lihat Detail</button>
             </div>
           </div>
+          <?php endif; endforeach; endif; ?>
         </section>
       </div>
-      <?php endif; endforeach; endif; ?>
       <!-- End of About Us -->
 
       <section class="section-produk" id="produk">
