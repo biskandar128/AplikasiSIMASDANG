@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #wrapper {
+        margin: auto;
+        width: 400px;
+      }
+      #wrapper input[type='checkbox'] {
+        position: relative;
+        min-height: 180px;
+        width: 190px;
+        border-radius: 50%;
+        background: #4c2d18;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+      }
+      #wrapper input[type='checkbox']:after {
+        font-size: 2em;
+        text-align: center;
+        line-height: 70px;
+        color: lightgoldenrodyellow;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        display: block;
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        background-color: goldenrod;
+        transition: all 0.3s ease-out;
+      }
+      #wrapper input[type='checkbox']:before {
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        content: '';
+        display: block;
+        height: 80px;
+        width: 80px;
+        border: 3px dotted goldenrod;
+        border-radius: 50%;
+        transition: all 0.1s ease-in;
+      }
+      #wrapper input[type='checkbox']:hover:before {
+        height: 60px;
+        width: 60px;
+      }
+      #wrapper input[type='checkbox']:checked:before {
+        height: 100%;
+        width: 100%;
+        background: #361e12;
+        border: none;
+        border-radius: 50%;
+      }
+      #wrapper .checkbox1:after {
+        content: '1';
+      }
+      #wrapper .checkbox2:after {
+        content: '2';
+      }
+      #wrapper input[type='checkbox']:focus {
+        outline: none;
+      }
+      #wrapper input[type='checkbox']:checked:after {
+        content: '✓';
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <p>
+        <input type="checkbox" class="checkbox1" />
+        <input type="checkbox" class="checkbox2" />
+      </p>
+    </div>
+  </body>
+</html>

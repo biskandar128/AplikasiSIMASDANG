@@ -1,0 +1,955 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap");
+
+:root{
+	scroll-behavior: smooth;
+}
+body {
+	background-color: #fff;
+	font-family: "Assistant", sans-serif;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+
+// HALAMAN MOBILE
+@media screen and (min-width: 280px) and (max-width: 991px) {
+	.navbar-light {
+		// height: 7rem;
+		background-color: #fff;
+		box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+
+		.container-fluid {
+			margin-left: 1vw;
+			margin-right: 1vw;
+			.logo-simasdang {
+				height: 3rem;
+				min-width: 6vw;
+			}
+
+			ul {
+				li {
+					.nav-link {
+						font-size: calc(1rem + 0.3vw);
+						margin-left: 0.3rem;
+						color: #000;
+						font-weight: 600;
+						// transition: 0.3s;
+						&.active {
+							font-size: calc(1rem + 0.3vw);
+							font-weight: 600;
+							color: #ff5944;
+						}
+						&:hover {
+							color: #ff5944;
+						}
+					}
+				}
+			}
+
+			.vertical-line {
+				border-left: 1px solid #ccc;
+				height: 35px;
+			}
+
+			button {
+				box-shadow: none;
+				outline-style: none;
+			}
+
+			.btn-cart {
+				font-weight: 600;
+				color: #000;
+				font-size: calc(0.8rem + 0.3vw);
+				background: none;
+
+				.fa-user {
+					color: #ccc;
+				}
+			}
+
+			.btn-masuk {
+				font-weight: 600;
+				background-color: #fc4128;
+				border: 2px solid #fc4128;
+				color: #fff;
+				font-size: calc(0.8rem + 0.3vw);
+				&:hover {
+					border: 2px solid #ff5944;
+					background-color: #fff;
+					color: #ff5944;
+				}
+			}
+
+			.btn-daftar {
+				border: 2px solid #ff5944;
+				color: #ff5944;
+				font-weight: 600;
+				background-color: #fff;
+				font-size: calc(0.8rem + 0.3vw);
+				&:hover {
+					background-color: #fc4128;
+					border: 2px solid #fc4128;
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	header {
+		padding: 160px 0 170px;
+		margin-top: -120px;
+		background-image: url("../img/background_fix.svg");
+		background-size: cover;
+		height: 400px;
+		img {
+			max-height: 10rem;
+		}
+		h1 {
+			color: #fff;
+			font-weight: bold;
+			font-size: calc(1.2rem + 0.3vw);
+		}
+	}
+
+	// Main of Statistic
+	.container-statistic {
+		background-color: #fff;
+		width: 100%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		.section-stats {
+			padding-top: 15px;
+			padding-bottom: 10px;
+			margin-top: -40px;
+			img {
+				width: 2.5rem;
+			}
+			h2 {
+				font-size: calc(1rem + 0.3vw);
+				font-weight: 600;
+				margin-bottom: 0;
+			}
+			p {
+				font-size: calc(0.8rem + 0.3vw);
+				font-weight: 500;
+			}
+		}
+	}
+	// End of Main Statistic
+
+	// Main of Tentang Kami
+	.section-about {
+		margin-top: 40px;
+		h2 {
+			font-size: calc(1.2rem + 0.3vw);
+			font-weight: 700;
+		}
+
+		hr {
+			width: 80px;
+			border-top: 3px solid #fc4128;
+		}
+		.row {
+			margin-top: 50px;
+			img {
+				max-width: 100%;
+				margin-left: 1rem;
+			}
+			p {
+				margin-right: 20px;
+				font-size: calc(0.6rem + 0.3vw);
+			}
+			.btn-about {
+				background-color: #fc4128;
+				padding: 0.3rem 1rem;
+				font-size: 12px;
+				font-weight: 500;
+				color: #fff;
+			}
+		}
+	}
+	// End of Main Tentang Kami
+
+	// Main of Produk
+	.section-produk {
+		margin-top: 40px;
+		h2 {
+			font-size: calc(1.2rem + 0.3vw);
+			font-weight: 700;
+		}
+		hr {
+			width: 40px;
+			border-top: 3px solid #fc4128;
+		}
+		.section-item {
+			margin-top: 50px;
+			background-image: url("../img/background.jpg");
+			height: 400px;
+			.card {
+				margin-top: 100px;
+				border-radius: 15px;
+				box-shadow: 0 3px 20px rgba(0, 0, 0, 0.25);
+				padding-bottom: 40px;
+				width: 12rem;
+				height: 15rem;
+				img {
+					height: 120px;
+					width: 140px;
+				}
+				h5 {
+					font-size: calc(1rem + 0.3vw);
+				}
+				.card-img-top {
+					margin-top: -50px;
+					padding-bottom: -500px;
+				}
+				.btn-beli {
+					background-color: #fc4128;
+					color: #fff;
+				}
+			}
+		}
+	}
+	// End of Main Produk
+
+	.section-testimonial {
+		margin-top: 80px;
+		h2 {
+			font-size: calc(1.2rem + 0.3vw);
+			font-weight: 700;
+		}
+		p {
+			font-size: calc(1rem + 0.3vw);
+		}
+		hr {
+			width: 120px;
+			border-top: 3px solid #fc4128;
+			margin-bottom: 50px;
+		}
+		.card {
+			padding-bottom: 28px;
+
+			h5 {
+				font-size: calc(0.8rem + 0.3vw);
+				margin-bottom: 5px;
+			}
+			p {
+				font-size: calc(0.6rem + 0.3vw);
+			}
+			.stars {
+				margin-bottom: 5px;
+			}
+			.testimonial-content {
+				min-height: 18rem;
+			}
+		}
+	}
+
+	.owl-carousel{
+		display: flex;
+		.items{
+			margin-left: 10px;
+			.card {
+			max-height: 30vmax;
+			h5 {
+				font-size: 1.2em;
+				margin-left: 20px;
+			  }
+			  p{
+				  font-size: 0.9em;
+				  margin-left: 20px;
+			  }
+			  .stars {
+				  margin-left: 20px;
+				i {
+				  font-size: 10px;
+				}
+			  }
+			}
+			img{
+				width: 100%;
+				max-width: 60px;
+				height: 60px;
+				margin-top: 20px;
+				margin-left: 10px;
+				margin-right: 70px;
+				border-radius: 50%;
+				
+			}
+		}
+	}  
+
+	.section-user {
+		img {
+			width: 90px;
+			height: auto;
+			border-radius: 100%;
+			margin-top: -48px;
+			box-shadow: 0 3px 30px rgba(0, 0, 0, 0.3);
+		}
+		h4 {
+			font-size: 1.3em;
+			display: block;
+			margin-top: -86px;
+			margin-left: 96px;
+			color: #fff;
+			text-shadow: 0 2px rgba(0, 0, 0, 0.3);
+		}
+		button {
+			background-color: #17a2b8;
+			color: #fff;
+		}
+		.btn-user {
+			margin-top: -30px;
+		}
+	}
+
+	.content-user {
+		margin-top: 80px;
+		margin-left: -18px;
+		a {
+			font-size: calc(0.8rem + 0.3vw);
+			color: #fc4128;
+			font-weight: 600;
+		}
+		.tab-content {
+			.tab-pane {
+				margin: 10px;
+			}
+		}
+	}
+
+	.check-payment {
+		position: absolute;
+		left: 95%;
+		transform: scale(1.5);
+	}
+
+	.section-produk-detail {
+		.row {
+			margin-top: -40px;
+			.col-12 {
+				img {
+					display: block;
+					margin: 0 auto;
+				}
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+}
+
+// HALAMAN DESKTOP
+@media screen and (min-width: 992px) {
+	.navbar-light {
+		// height: 7rem;
+		background-color: #fff;
+		box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+
+		.container-fluid {
+			margin-left: 1vw;
+			margin-right: 1vw;
+			.logo-simasdang {
+				height: 4rem;
+				min-width: 6rem;
+			}
+
+			ul {
+				li {
+					.nav-link {
+						font-size: calc(1rem + 0.3vw);
+						margin-left: 0.3rem;
+						color: #000;
+						font-weight: 600;
+						// transition: 0.3s;
+						&.active {
+							font-size: calc(1rem + 0.3vw);
+							font-weight: 600;
+							color: #ff5944;
+						}
+						&:hover {
+							color: #ff5944;
+							margin-bottom: -10px;
+							border-bottom: 2px solid #ff5944;
+						}
+					}
+				}
+			}
+
+			.vertical-line {
+				border-left: 1px solid #ccc;
+				height: 35px;
+			}
+
+			button {
+				box-shadow: none;
+				outline-style: none;
+			}
+
+			.btn-cart {
+				font-weight: 600;
+				color: #000;
+				font-size: calc(0.8rem + 0.3vw);
+				background: none;
+				.fa-user {
+					color: #ccc;
+				}
+			}
+
+			.btn-masuk {
+				font-weight: 600;
+				background-color: #fc4128;
+				border: 2px solid #fc4128;
+				color: #fff;
+				font-size: calc(0.8rem + 0.3vw);
+				&:hover {
+					border: 2px solid #ff5944;
+					background-color: #fff;
+					color: #ff5944;
+				}
+			}
+
+			.btn-daftar {
+				border: 2px solid #ff5944;
+				color: #ff5944;
+				font-weight: 600;
+				background-color: #fff;
+				font-size: calc(0.8rem + 0.3vw);
+				&:hover {
+					background-color: #fc4128;
+					border: 2px solid #fc4128;
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	// Header Simasdang
+	header {
+		padding: 160px 0 170px;
+		margin-top: -120px;
+		background-image: url("../img/background_fix.svg");
+		background-size: cover;
+		height: 720px;
+		h1 {
+			color: #fff;
+			font-weight: bold;
+			font-size: calc(2.4rem + 0.3vw);
+		}
+	}
+	// End of Header Simasdang
+
+	// Main of Statistic
+	.container-statistic {
+		background-color: #fff;
+		width: 800px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		border-radius: 10px;
+		.section-stats {
+			padding-top: 15px;
+			padding-bottom: 10px;
+			margin-top: -40px;
+			h2 {
+				font-size: calc(1.4rem + 0.3vw);
+				font-weight: 600;
+				margin-bottom: 0;
+			}
+			p {
+				font-size: calc(0.9rem + 0.3vw);
+				font-weight: 500;
+			}
+		}
+	}
+	// End of Main Statistic
+
+	// Main of Tentang Kami
+	.section-about {
+		margin-top: 80px;
+		h2 {
+			font-weight: 700;
+		}
+		hr {
+			width: 80px;
+			border-top: 3px solid #fc4128;
+		}
+		.row {
+			margin-top: 50px;
+			img {
+				width: 350px;
+				margin-left: 2rem;
+			}
+			p {
+				margin-right: 50px;
+				font-size: calc(0.9rem + 0.3vw);
+			}
+			.btn-about {
+				background-color: #fc4128;
+				border-radius: 10px;
+				padding: 0.5rem 2rem;
+				font-size: 18px;
+				font-weight: 500;
+				color: #fff;
+			}
+		}
+	}
+	// End of Main Tentang Kami
+
+	// Main of Produk
+	.section-produk {
+		margin-top: 80px;
+		h2 {
+			font-weight: 700;
+		}
+		hr {
+			width: 80px;
+			border-top: 3px solid #fc4128;
+		}
+		.section-item {
+			margin-top: 50px;
+			background-image: url("../img/background.jpg");
+			height: 520px;
+			.card {
+				margin-top: 150px;
+				border-radius: 15px;
+				box-shadow: 0 3px 20px rgba(0, 0, 0, 0.25);
+				padding-bottom: 40px;
+				max-width: 18rem;
+				max-height: 20rem;
+				img {
+					height: 15rem;
+					max-width: 17rem;
+				}
+				.card-img-top {
+					margin-top: -100px;
+				}
+				h5 {
+					font-size: calc(1.2rem + 0.3vw);
+				}
+				p {
+					font-size: calc(1rem + 0.3vw);
+				}
+				.btn-beli {
+					background-color: #fc4128;
+					color: #fff;
+					font-size: calc(1rem + 0.3vw);
+				}
+			}
+		}
+	}
+	// End of Main Produk
+
+	.section-testimonial {
+		margin-top: 80px;
+		margin-bottom: 120px;
+		h2 {
+			font-weight: 700;
+		}
+		hr {
+			width: 120px;
+			border-top: 3px solid #fc4128;
+			margin-bottom: 50px;
+		}
+		.card {
+			padding-bottom: 28px;
+			h5 {
+				margin-bottom: 5px;
+			}
+			.stars {
+				margin-bottom: 15px;
+			}
+			.testimonial-content {
+				min-height: 20rem;
+			}
+		}
+	}
+	.owl-carousel{
+		.items{
+			.card {
+			height: 17vmax;
+			margin-left: 20px;
+			}
+			img{
+				width: 100%;
+				max-width: 90px;
+				height: 90px;
+				margin-top: 20px;
+				margin-left: 20px;
+				border-radius: 50%;
+			}
+		}
+	}  
+
+	.section-user {
+		img {
+			width: 120px;
+			height: auto;
+			border-radius: 100%;
+			margin-top: -68px;
+			margin-left: 20px;
+			box-shadow: 0 3px 30px rgba(0, 0, 0, 0.3);
+		}
+		h4 {
+			font-size: 1.3em;
+			display: block;
+			margin-top: -94px;
+			margin-left: 160px;
+			color: #fff;
+			text-shadow: 0 2px rgba(0, 0, 0, 0.3);
+		}
+
+		button {
+			background-color: #17a2b8;
+			color: #fff;
+		}
+		.btn-user {
+			margin-top: -30px;
+		}
+	}
+
+	.check-payment {
+		position: absolute;
+		left: 95%;
+		transform: scale(1.5);
+	}
+	.content-user {
+		margin-top: 120px;
+		margin-left: -18px;
+		a {
+			font-size: calc(0.8rem + 0.3vw);
+			color: #fc4128;
+			font-weight: 600;
+		}
+		.tab-content {
+			.tab-pane {
+				margin: 10px;
+			}
+		}
+	}
+}
+
+.header-detail-produk {
+	background-image: linear-gradient(
+		to left,
+		rgb(255, 89, 68),
+		rgba(255, 28, 0, 0.65),
+		rgba(251, 28, 0, 0.57)
+	);
+	height: 140px;
+	img {
+		max-height: 80px;
+		max-width: 192px;
+	}
+}
+
+.card-detail {
+	margin-top: -44px;
+	h2 {
+		a {
+			font-size: calc(1.2rem + 0.3vw);
+			color: #fc4128;
+			&:focus {
+				outline-style: none !important;
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+.section-produk-detail {
+	margin-top: 80px;
+	margin-bottom: 80px;
+	h4 {
+		margin-bottom: 16px;
+	}
+	p {
+		font-size: calc(0.9rem + 0.3vw);
+	}
+}
+
+.btn-payment {
+	color: #000;
+	&:hover {
+		color: #fc4128;
+		text-decoration: none;
+	}
+	&.focus {
+		color: #fc4128;
+		text-decoration: none;
+	}
+	&.active {
+		color: #fc4128;
+		text-decoration: none;
+	}
+}
+
+// Footer
+.custom-footer {
+	background-image: linear-gradient(
+		to left,
+		rgb(255, 89, 68),
+		rgba(255, 28, 0, 0.65),
+		rgba(251, 28, 0, 0.57)
+	);
+	height: 500px;
+	color: #fff;
+	list-style: none;
+	.tautan-langsung {
+		ul {
+			list-style: none;
+		}
+		.nav-item {
+			.nav-link {
+				text-decoration: none;
+				color: #fff;
+				margin-right: 3em;
+				&:hover {
+					color: black;
+				}
+			}
+		}
+	}
+	.kontak {
+		a {
+			padding: 0.5em 2em;
+			text-decoration: none;
+			color: #fff;
+			&:hover {
+				color: black;
+			}
+		}
+	}
+	@media (max-width: 768px) {
+		.partner {
+			h2 {
+				font-size: 17px;
+			}
+			img {
+				width: 50px;
+				height: 75px;
+			}
+		}
+		.tautan-langsung {
+			h2 {
+				font-size: 17px;
+			}
+			.navbar-nav {
+				.nav-item {
+					.nav-link {
+						font-size: 13px;
+					}
+				}
+			}
+		}
+		.kontak {
+			display: inline;
+			h2 {
+				font-size: 17px;
+			}
+			.navbar-nav {
+				.nav-item {
+					.link {
+						margin-top: 30px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 280px) and (max-width: 1023px) {
+	.footer-methodPay {
+		svg {
+			margin-bottom: -30px;
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.footer-methodPay {
+		svg {
+			margin-bottom: -28rem;
+		}
+	}
+}
+
+hr.new2 {
+	border-top: 2px dashed rgb(122, 121, 121);
+}
+
+.container-struk {
+	.card {
+		box-shadow: 0 3px 20px rgba(0, 0, 0, 0.3);
+	}
+}
+
+.table-struk {
+	tr {
+		th {
+			border: 0;
+		}
+		td {
+			border: 0;
+		}
+	}
+}
+
+// End of Footer
+
+.header-user {
+	background-image: linear-gradient(
+		to left,
+		rgb(255, 89, 68),
+		rgba(255, 28, 0, 0.65),
+		rgba(251, 28, 0, 0.57)
+	);
+	height: 160px;
+	img {
+		max-height: 80px;
+		max-width: 192px;
+	}
+}
+
+.section-rating {
+	.rating {
+		position: absolute;
+		top: 50%;
+		right: 50%;
+		transform: translate(50%, -180%) rotateY(180deg);
+		display: flex;
+	}
+	.rating input {
+		display: none;
+	}
+	.rating label {
+		display: block;
+		cursor: pointer;
+		width: 30px;
+		/*background: #ccc;*/
+	}
+	.rating label:before {
+		content: "\f005";
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		position: relative;
+		display: block;
+		font-size: 25px;
+		color: #101010;
+	}
+	.rating label:after {
+		content: "\f005";
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		position: absolute;
+		display: block;
+		font-size: 25px;
+		color: orange;
+		top: 0;
+		opacity: 0;
+		text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+	}
+	.rating label:hover:after,
+	.rating label:hover ~ label:after,
+	.rating input:checked ~ label:after {
+		opacity: 1;
+	}
+
+	.form-ulasan {
+		label {
+			font-weight: 600;
+		}
+	}
+}
+
+// cart
+.shopping-cart {
+	width: auto;
+	height: 120px;
+	background: #ffffff;
+	box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.1);
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+}
+.quantity {
+	padding-top: 20px;
+	margin-right: 60px;
+}
+.quantity input {
+	-webkit-appearance: none;
+	border: none;
+	text-align: center;
+	width: 42px;
+	font-size: 24px;
+	color: #000;
+	font-weight: 500;
+}
+
+button[class*="plus-btn"] {
+	width: 30px;
+	height: 30px;
+	background-color: #f56476;
+	color: white;
+	border-radius: 6px;
+	border: none;
+	cursor: pointer;
+}
+button[class*="minus-btn"] {
+	width: 30px;
+	height: 30px;
+	background-color: #f56476;
+	color: white;
+	border-radius: 6px;
+	border: none;
+	cursor: pointer;
+}
+.minus-btn img {
+	margin-bottom: 3px;
+}
+.plus-btn img {
+	margin-top: 2px;
+}
+
+button:focus,
+input:focus {
+	outline: 0;
+}
+// End cart
+#myBtn {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99;
+	font-size: 14px;
+	border: none;
+	outline: none;
+	background-color: #f56476;
+	color: white;
+	cursor: pointer;
+	padding: 10px;
+	border-radius: 30px;
+	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.3);
+	&:hover {
+	  background-color: darken(#b14d59, 1);
+	}
+}
+#waMe {
+	display: inline;
+	position: fixed;
+	border-radius: 100%;
+	cursor: pointer;
+	bottom: 2vw;
+	left: 3vw;
+	outline: none;
+	background-color: #f56476;
+	color: white;
+	border: none;
+	z-index: 99;
+	font-size: calc(1rem + 0.3vw);
+	padding: 14px 17px;
+	box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.3);
+	&:hover {
+	  background-color: darken(#b14d59, 1);
+	}
+}
