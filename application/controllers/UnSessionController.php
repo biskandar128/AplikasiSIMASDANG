@@ -43,6 +43,7 @@ class UnSessionController extends CI_Controller
             'about_us' => $this->crud->getData('about_us')->result(),
             'products' => $this->crud->getDataJoin($table, $onjoin, [], $selectGoods)->result(),
             'ulasans' => $this->crud->getDataJoin($tableTesti, $onjoinTesti, $whereTesti, $selectTesti)->result(),
+            'whatsapp' => $this->crud->getDataWhere('account_systems', 'role', 'admin')->row()->nomor_telp,
         ];
 
         $this->load->view('UnSession/Beranda', $data);

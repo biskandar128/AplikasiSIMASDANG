@@ -55,6 +55,7 @@ class LandingController extends CI_Controller
             'about_us' => $this->crud->getData('about_us')->result(),
             'products' => $this->crud->getDataJoin($table, $onjoin, [], $selectGoods)->result(),
             'ulasans' => $this->crud->getDataJoin($tableTesti, $onjoinTesti, $whereTesti, $selectTesti)->result(),
+            'whatsapp' => $this->crud->getDataWhere('account_systems', 'role', 'admin')->row()->nomor_telp,
         ];
 
         $this->load->view('LandingPage/Beranda', $data);
@@ -188,7 +189,10 @@ class LandingController extends CI_Controller
 
     public function DetailPayments($params)
     {
-        $data = ['DataPayment' => $this->crud->getDataWhere('payments', 'payment_id', $params)->row()];
+        $data = [
+            'DataPayment' => $this->crud->getDataWhere('payments', 'payment_id', $params)->row(),
+            'whatsapp' => $this->crud->getDataWhere('account_systems', 'role', 'admin')->row()->nomor_telp,
+        ];
 
         if (!isset($data['DataPayment']->payment_id)) {
             redirect(base_url('user'));
@@ -382,6 +386,7 @@ class LandingController extends CI_Controller
         $data = [
             'DataRiwayat' => $this->crud->getDataWhere('transactions', 'account_id', $account_id)->result(),
             'DataAccount' => $this->crud->getDataWhere('account_customers', 'account_id', $account_id)->row(),
+            'whatsapp' => $this->crud->getDataWhere('account_systems', 'role', 'admin')->row()->nomor_telp,
         ];
 
         $this->load->view('LandingPage/HistoryTransactionPage', $data);

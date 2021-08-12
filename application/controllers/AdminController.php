@@ -249,15 +249,16 @@ class AdminController extends CI_Controller
         $this->load->view('Admin/VBackend', $data);
     }
 
-    // To be continue
     public function UpdateTransactionStatus()
     {
+        $emailSystem = $this->crud->getDataWhere('account_systems', 'account_id', $this->session->userdata('user_logged')->account_id)->row();
+
         $config = [
             'charset' => 'iso-8859-1',
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.gmail.com',
             'smtp_port' => 465,
-            'smtp_user' => 'biskandar158@gmail.com',
+            'smtp_user' => $emailSystem->email,
             'smtp_pass' => 'dmx785ia14',
             'mailtype' => 'html',
         ];
@@ -271,7 +272,6 @@ class AdminController extends CI_Controller
 
         $update['transaction_status'] = $this->input->post('transaction_status');
 
-        // Perlu diperbaiki untuk di email
         $params = $this->crud->getDataWhere('transactions', 'transaction_id', $transaction_id)->row();
 
         $table = 'transactions';
@@ -309,7 +309,6 @@ class AdminController extends CI_Controller
             $cancel = $this->crud->getDataJoin($table, $onjoin, $where, $select)->row();
 
             $this->crud->updateData('goods', 'goods_id', $cancel->goods_id, ['stok' => $cancel->stok - $cancel->qty]);
-            // die;
         }
 
         if ($update['transaction_status'] === 'Dikirim') {
@@ -476,6 +475,26 @@ class AdminController extends CI_Controller
         $detail = $this->crud->getDataJoin($table, $onjoin, $where, $select)->result();
 
         echo json_encode($detail);
+    }
+
+    public function accountSystem()
+    {
+        $data = ['account' => $this->crud->getDataWhere('account_systems', 'account_id', $this->session->userdata('user_logged')->account_id)->row()];
+
+        echo json_encode($data['account']);
+    }
+
+    public function updateAccountSystem()
+    {
+        $account_id = $this->session->userdata('user_logged')->account_id;
+
+        $update = [
+            'email' => $this->input->post('email'),
+            'nomor_telp' => "62{$this->input->post('nomor_telp')}",
+        ];
+
+        $this->crud->updateData('account_systems', 'account_id', $account_id, $update);
+        redirect(base_url('admin'));
     }
 
     public function PrintLaporanPemasukanExcel()

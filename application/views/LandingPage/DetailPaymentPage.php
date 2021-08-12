@@ -79,7 +79,7 @@
                 <p style="color: #ccc; font-size:16px;">Silahkan konfirmasi pesanan atau Pembayaran melalui link di bawah ini</p>
                 <a
                   target="_blank"
-                  href="https://wa.me/62895617685842?text=bukti%20pembayaran%20saya%20A.N%20..."
+                  href="https://wa.me/<?= $whatsapp; ?>?text=bukti%20pembayaran%20saya%20A.N%20..."
                   class="btn btn-info"
                   >Konfirmasi Pembayaran</a>
                   <a href="<?= base_url('user'); ?>" class="btn btn-danger">Beranda</a>

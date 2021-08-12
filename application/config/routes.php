@@ -59,6 +59,9 @@ $route = [
     'produk_detail/(:any)' => 'unsessioncontroller/productdetail/$1',
     'stokproduk/(:any)' => 'unsessioncontroller/stockproduct/$1',
     ////////////////////////////////////////////////////
+    'admin' => 'admincontroller/index',
+    'admin/accountprofile' => 'admincontroller/accountsystem',
+    'admin/updateaccountprofile' => 'admincontroller/updateaccountsystem',
     'admin/dashboard' => 'admincontroller/index',
     'admin/logout' => 'admincontroller/adminlogout',
     //-----------------PRODUK-------------------------//

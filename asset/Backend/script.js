@@ -19,6 +19,7 @@ class App {
 		this.updateTransactionStatus();
 		this.updateShippingStatus();
 		this.updateStatusRating();
+		this.systemProfile();
 
 		// Validate
 		this.validateFormTransactionStatus();
@@ -28,6 +29,7 @@ class App {
 		this.validateAboutUs();
 		this.validateTestimonial();
 		this.validatePayment();
+		this.validateProfile();
 	}
 
 	_url = "http://localhost:8080/simasdang/";
@@ -626,6 +628,8 @@ class App {
 				try {
 					const dataId = await fetch(`${url}${transaction_id}`);
 
+					console.log(dataId);
+
 					const [data] = await dataId.json();
 
 					document.querySelector("#transaction_id").textContent =
@@ -664,6 +668,57 @@ class App {
 			};
 
 			dataTransaction(btnId.getAttribute("data-transaction-id"));
+		});
+	}
+
+	systemProfile() {
+		const url = `${this._url}admin/accountprofile`;
+
+		$("#modalProfile").on("show.bs.modal", function (e) {
+			const dataAccount = async function () {
+				try {
+					const dataPro = await fetch(url);
+
+					const data = await dataPro.json();
+
+					document.querySelector("#emailProfil").value = data.email;
+					document.querySelector("#nomor_telpProfil").value = data.nomor_telp;
+				} catch (error) {
+					console.log(`Error nih ${error}`);
+				}
+			};
+
+			dataAccount();
+		});
+	}
+
+	validateProfile() {
+		const btnUbahProfile = document.getElementById("btnUbahProfile");
+
+		if (!btnUbahProfile) return;
+
+		const sweetAlert = function (message) {
+			Swal.fire({
+				icon: "error",
+				title: "Ooops...",
+				text: `${message} tidak boleh kosong!`,
+			});
+		};
+
+		const colId = document.getElementById("emailProfil");
+		const colTelp = document.getElementById("nomor_telpProfil");
+
+		btnUbahProfile.addEventListener("click", function (e) {
+			if (colId.value == "") {
+				e.preventDefault();
+				sweetAlert("Email");
+			} else if (colTelp.value == "") {
+				e.preventDefault();
+				sweetAlert("Nomor WA");
+			} else if (colTelp.value[0] == 0) {
+				e.preventDefault();
+				sweetAlert("Nomor WA tidak boleh diawail 0");
+			}
 		});
 	}
 }

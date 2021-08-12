@@ -165,6 +165,13 @@
                   aria-labelledby="navbarDropdown"
                 >
                   <div class="d-flex justify-content-center p-10">
+                    <button type="button" class="btn btn-info btn-lg text-white" data-bs-toggle="modal" data-bs-target="#modalProfile" id="btnProfile">
+                      <i class="fa fa-user me-1 ms-1"></i> Ubah Profile
+                    </button>
+                  </div>
+
+                
+                  <div class="d-flex justify-content-center p-10">
                     <a
                       href="<?= base_url('admin/logout'); ?>"
                       class="btn btn-danger btn-lg text-white" id="btn-logout"
@@ -180,6 +187,40 @@
           </div>
         </nav>
       </header>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Profile Sistem</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action="<?= base_url('admin/updateaccountprofile'); ?>" method="post">
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" name="email" class="form-control" required id="emailProfil" aria-describedby="email">
+                </div>
+                <div class="mb-3">
+                  <label for="nomor_telp" class="form-label">Nomor WA</label>
+                  <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">+62</span>
+                    <input type="number" name="nomor_telp" class="form-control" required id="nomor_telpProfil">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" id="btnUbahProfile">Ubah Profile</button>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
       <!-- ============================================================== -->
       <!-- End Topbar header -->
       <!-- ============================================================== -->

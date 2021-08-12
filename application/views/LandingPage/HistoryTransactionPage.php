@@ -198,9 +198,7 @@
                                 <td><h5 class="font-weight-bold">Total Bayar</h5></td>
                                 <td><h4 class="float-right font-weight-bold" id="total_bayar"></h4></td>
                             </tr>
-                            </table>
-                            
-
+                            </table>                        
                         </div>
                     </div>                                
 
@@ -208,7 +206,7 @@
                 <div class="modal-footer">
                     <a
                     target="_blank"
-                    href="https://wa.me/62895617685842?text=bukti%20pembayaran%20saya%20A.N%20..."
+                    href="https://wa.me/<?= $whatsapp; ?>?text=Hai%20admin...%20Saya%20ingin%20bertanya..."
                     class="btn btn-info"
                     >Chat Admin</a>
                 </div>

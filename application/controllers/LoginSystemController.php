@@ -30,11 +30,6 @@ class LoginSystemController extends CI_Controller
                 $password = $this->input->post('password');
 
                 if ($this->login->processLogin('account_systems')) {
-                    // var_dump($this->session->userdata('user_logged'));
-                    // die;
-                    if ($this->session->userdata('user_logged')->role === 'kurir') {
-                        redirect('kurir/dashboard');
-                    }
                     if ($this->session->userdata('user_logged')->role === 'admin') {
                         redirect('admin/dashboard');
                     }

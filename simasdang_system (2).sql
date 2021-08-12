@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Agu 2021 pada 04.49
+-- Waktu pembuatan: 12 Agu 2021 pada 13.28
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.1
 
@@ -75,7 +75,7 @@ CREATE TABLE `account_systems` (
 --
 
 INSERT INTO `account_systems` (`account_id`, `username`, `password`, `account_system_name`, `email`, `nomor_telp`, `role`) VALUES
-(100000000001, 'admin', '$2y$10$iKRYfuJj8kvmD0KAK02Wqe3jSSLOm9Bhy0l6xWQEawEo.ZC17spzO', 'admin', 'biskandar128@gmail.com', '081297639943', 'admin');
+(100000000001, 'admin', '$2y$10$iKRYfuJj8kvmD0KAK02Wqe3jSSLOm9Bhy0l6xWQEawEo.ZC17spzO', 'admin', 'biskandar158@gmail.com', '6285959593311', 'admin');
 
 -- --------------------------------------------------------
 
@@ -139,6 +139,13 @@ CREATE TABLE `payments` (
   `payment_transfer` varchar(30) NOT NULL,
   `payment_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `payments`
+--
+
+INSERT INTO `payments` (`payment_id`, `payment_img`, `payment_receiver`, `payment_name`, `payment_transfer`, `payment_status`) VALUES
+(1, 'undefined', 'Kosong', 'Belum Bayar', '0', 0);
 
 -- --------------------------------------------------------
 
@@ -290,7 +297,7 @@ ALTER TABLE `account_systems`
 -- AUTO_INCREMENT untuk tabel `address_customers`
 --
 ALTER TABLE `address_customers`
-  MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `goods`
@@ -308,7 +315,7 @@ ALTER TABLE `goods_content`
 -- AUTO_INCREMENT untuk tabel `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `testimonials`
@@ -326,7 +333,7 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT untuk tabel `transaction_details`
 --
 ALTER TABLE `transaction_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

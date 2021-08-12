@@ -308,7 +308,7 @@
         />
       </svg>
     </button>
-    <a target="blank" href="https://wa.me/6285959593311?text=Saya%20ingin%20membeli%20sambal" id="waMe" title="WhatsApp Me">
+    <a target="blank" href="https://wa.me/<?= $whatsapp; ?>?text=Saya%20ingin%20membeli%20sambal" id="waMe" title="WhatsApp Me">
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
         width="1.5em"
