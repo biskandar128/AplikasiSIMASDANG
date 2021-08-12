@@ -97,7 +97,7 @@ $route = [
     //----------------DATA TRANSAKSI------------------//
     'admin/transaksi' => 'admincontroller/transaction',
     'admin/transaksi_detail/(:any)' => 'admincontroller/detailtransaction/$1',
-    'admin/laporan/pemasukan' => 'admincontroller/reporttransaction',
+    'admin/laporan/transaksi' => 'admincontroller/reporttransaction',
     'admin/update_transaksi_status' => 'admincontroller/updatetransactionstatus',
     //-------------End of DATA TRANSAKSI--------------//
 

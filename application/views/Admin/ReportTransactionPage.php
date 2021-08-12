@@ -4,7 +4,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-header">
-                        <h3 class="font-weight-bold text-center mb-3">Laporan Pemasukan</h3>
+                        <h3 class="font-weight-bold text-center mb-3">Laporan Transaksi</h3>
                     </div>
                     <div class="dropdown-divider mb-3"></div>
                     

@@ -323,9 +323,9 @@
                 >
                 <ul aria-expanded="false" class="collapse first-level">
                   <li class="sidebar-item">
-                    <a href="<?= base_url('admin/laporan/pemasukan'); ?>" class="sidebar-link"
+                    <a href="<?= base_url('admin/laporan/transaksi'); ?>" class="sidebar-link"
                       ><i class="mdi mdi-emoticon"></i
-                      ><span class="hide-menu">Pemasukan</span></a
+                      ><span class="hide-menu">Transaksi</span></a
                     >
                   </li>
                 </ul>

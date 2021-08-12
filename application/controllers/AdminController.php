@@ -426,7 +426,7 @@ class AdminController extends CI_Controller
         $data = [
             'DataTransaction' => $this->crud->getDataJoin($table, $onjoin, [], $select)->result(),
             'content' => 'Admin/ReportTransactionPage',
-            'titlePage' => 'Halaman Laporan Pemasukan',
+            'titlePage' => 'Halaman Laporan Transaksi',
             'title' => 'Laporan',
         ];
 
