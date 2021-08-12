@@ -71,7 +71,7 @@ class LoginUserController extends CI_Controller
         ];
             $this->crud->AddData('account_customers', $add);
 
-            $this->session->set_flashdata('success_register', 'Proses Pendaftaran User Berhasil');
+            $this->session->set_flashdata('success_register', 'Proses Pendaftaran Akun Berhasil');
             redirect('user/login');
         } else {
             $this->session->set_flashdata('error', validation_errors());

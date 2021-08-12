@@ -64,7 +64,7 @@
             </section>
 
             <!-- content -->
-            <section class="section-form-transaksi mb-4" style="margin-top: 3.5rem">
+            <section class="section-form-transaksi mb-4" style="margin-top: 4rem">
                 <div class="container">
                 <div class="card">
                     <div class="card-body">
