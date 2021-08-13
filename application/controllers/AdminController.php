@@ -440,23 +440,6 @@ class AdminController extends CI_Controller
         redirect(base_url('sistem/login'));
     }
 
-    public function PrintLaporanPemasukanPdf()
-    {
-        $this->db->from('transactions');
-        $this->db->join('account_customers', 'transactions.account_id = account_customers.account_id');
-        $this->db->join('payments', 'transactions.payment_id = payments.payment_id');
-        $this->db->where('transactions.transaction_status !=', 'Menunggu');
-        $this->db->where('transactions.transaction_status !=', 'Batal');
-        $this->db->select('transactions.transaction_id, transactions.transaction_date, transactions.transaction_total, account_customers.account_name, payments.payment_name');
-        $query = $this->db->get()->result();
-
-        $data = [
-            'DataTransaction' => $query,
-        ];
-
-        $this->load->view('Admin/VCetakPDFLaporanPemasukan', $data);
-    }
-
     public function DetailTransaction($params)
     {
         $table = 'transactions';
@@ -497,16 +480,45 @@ class AdminController extends CI_Controller
         redirect(base_url('admin'));
     }
 
-    public function PrintLaporanPemasukanExcel()
+    public function PrintLaporanPemasukanPdf($fromDate = '', $toDate = '')
+    {
+        $this->db->from('transactions');
+        $this->db->join('account_customers', 'transactions.account_id = account_customers.account_id');
+        $this->db->join('payments', 'transactions.payment_id = payments.payment_id');
+        $this->db->where('transactions.transaction_status !=', 'Menunggu');
+        $this->db->where('transactions.transaction_status !=', 'Batal');
+        if ($fromDate) {
+            $this->db->where('transactions.transaction_date >=', $fromDate);
+        }
+        if ($toDate) {
+            $this->db->where('transactions.transaction_date <=', $toDate);
+        }
+        $this->db->select('transactions.transaction_id, transactions.transaction_date, transactions.transaction_total, account_customers.account_name, payments.payment_name');
+        $query = $this->db->get()->result();
+
+        $data = [
+            'DataTransaction' => $query,
+        ];
+
+        $this->load->view('Admin/VCetakPDFLaporanPemasukan', $data);
+    }
+
+    public function PrintLaporanPemasukanExcel($fromDate = '', $toDate = '')
     {
         header('Content-type=appalication/vnd.ms.excel');
-        header('Content-disposition: attachment; filename=Laporan Pemasukan SIMASDANG.xls');
+        header('Content-disposition: attachment; filename=Laporan Transaksi SIMASDANG.xls');
 
         $this->db->from('transactions');
         $this->db->join('account_customers', 'transactions.account_id = account_customers.account_id');
         $this->db->join('payments', 'transactions.payment_id = payments.payment_id');
         $this->db->where('transactions.transaction_status !=', 'Menunggu');
         $this->db->where('transactions.transaction_status !=', 'Batal');
+        if ($fromDate) {
+            $this->db->where('transactions.transaction_date >=', $fromDate);
+        }
+        if ($toDate) {
+            $this->db->where('transactions.transaction_date <=', $toDate);
+        }
         $this->db->select('transactions.transaction_id, transactions.transaction_date, transactions.transaction_total, account_customers.account_name, payments.payment_name');
         $query = $this->db->get()->result_array();
 

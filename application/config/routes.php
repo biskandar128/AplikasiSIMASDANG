@@ -90,7 +90,11 @@ $route = [
     //-----------------End of DATA AKUN---------------//
 
     //------------------ADMIN REPORT-------------------//
+    'admin/pdf/(:any)/(:any)' => 'admincontroller/printlaporanpemasukanpdf/$1/$2',
+    'admin/pdf/(:any)' => 'admincontroller/printlaporanpemasukanpdf/$1',
     'admin/pdf' => 'admincontroller/printlaporanpemasukanpdf',
+    'admin/excel/(:any)/(:any)' => 'admincontroller/printlaporanpemasukanexcel/$1/$2',
+    'admin/excel/(:any)' => 'admincontroller/printlaporanpemasukanexcel/$1',
     'admin/excel' => 'admincontroller/printlaporanpemasukanexcel',
     ////////////////////////////////////////////////////
     ////////////////////////////////////////////////////

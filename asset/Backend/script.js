@@ -20,6 +20,7 @@ class App {
 		this.updateShippingStatus();
 		this.updateStatusRating();
 		this.systemProfile();
+		this.filterPrintReport();
 
 		// Validate
 		this.validateFormTransactionStatus();
@@ -719,6 +720,32 @@ class App {
 				e.preventDefault();
 				sweetAlert("Nomor WA tidak boleh diawail 0");
 			}
+		});
+	}
+
+	filterPrintReport() {
+		const fromDate = document.getElementById("from_date");
+
+		if (!fromDate) return;
+
+		const btnExcel = document.getElementById("btn-excel");
+		const btnPdf = document.getElementById("btn-pdf");
+		const toDate = document.getElementById("to_date");
+		const urlPdf = btnPdf.href;
+		const urlExcel = btnExcel.href;
+
+		btnExcel.addEventListener("click", function (e) {
+			btnExcel.href = urlExcel;
+			btnExcel.href = `${btnExcel.href}${
+				fromDate.value ? "/" + fromDate.value + "/" : "/"
+			}${toDate.value}`;
+		});
+
+		btnPdf.addEventListener("click", function (e) {
+			btnPdf.href = urlPdf;
+			btnPdf.href = `${btnPdf.href}${
+				fromDate.value ? "/" + fromDate.value + "/" : "/"
+			}${toDate.value}`;
 		});
 	}
 }
