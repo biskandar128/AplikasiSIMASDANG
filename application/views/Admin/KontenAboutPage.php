@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <div class="card-header">
                         <h3 class="font-weight-bold text-center mb-3">Konten Tentang Kami</h3>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAbout">Tambah data</button>
+                        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAbout">Tambah data</button> -->
                     </div>
                     <div class="dropdown-divider mb-3"></div>
                     <div class="table-responsive">
