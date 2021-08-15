@@ -230,7 +230,7 @@
                       </div>
 
                       <p class="card-text mr-3">
-                        <?= $ulasan->ulasan; ?>
+                        <?= word_limiter($ulasan->ulasan, 10); ?>
                       </p>
                     </div>
                   </div>

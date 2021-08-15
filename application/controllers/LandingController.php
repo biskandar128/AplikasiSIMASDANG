@@ -9,6 +9,7 @@ class LandingController extends CI_Controller
         parent::__construct();
         $this->load->model('CrudModel', 'crud');
         $this->load->library('session');
+        $this->load->helper('text');
         if ($this->session->userdata('user_logged')->customer_role !== 'Pelanggan') {
             redirect('user/login');
         }
