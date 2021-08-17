@@ -2,7 +2,7 @@
 
             $pdf = new Pdf('mm', 'A4', true, 'UTF-8', false);
             $pdf->SetPageOrientation('P');
-            $pdf->SetTitle('Laporan Pemasukan SIMASDANG');
+            $pdf->SetTitle('Laporan Transaksi SIMASDANG');
             $pdf->SetHeaderMargin(30);
             $pdf->SetTopMargin(20);
             $pdf->setFooterMargin(20);
