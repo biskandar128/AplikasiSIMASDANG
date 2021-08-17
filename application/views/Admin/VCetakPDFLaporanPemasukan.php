@@ -36,4 +36,4 @@
             }
             $html .= '</table>';
             $pdf->writeHTML($html, true, false, true, false, '');
-            $pdf->Output('Laporan Pemasukan SIMASDANG.pdf', 'I');
+            $pdf->Output('Laporan Transaksi SIMASDANG.pdf', 'I');
